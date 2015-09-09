@@ -1,0 +1,18 @@
+<html>
+<head><title>Post</title></head>
+<a href="/logout/">logout</a><br>
+<a href ="/up">Back</a>
+<body bgcolor=pink>
+
+<div class="container" align=center>
+<h1>First Blog</h1>
+<hr />
+<form action='/post/form_upload.html' method='post'>{% csrf_token %}
+{{ form.as_p }}
+<input type='submit' value='Submit' />
+
+</form>
+
+</div>
+</body>
+</html>

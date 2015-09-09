@@ -1,0 +1,35 @@
+<html>
+ <head><title>Post</title></head>
+ <body bgcolor = #7fffd4>
+         <a href="/blog/">Create</a><br>
+
+
+   <!--<h1>My New Blog Version 0.0.1</h1>
+
+
+   {% for post in post_list %}
+   {{ post }}
+   <hr />
+   {% endfor %}
+-->
+
+<a href="/logout/">Logout</a>
+
+
+
+ <div class="container">
+    <h1>First Blog</h1>
+    <hr />
+    {% for post in post %}
+        <div class="post">
+        <h2>{{ post.title }}</h2>
+        <h3>Posted on {{ post.pub_date }} by {{ post.author }}</h3>
+        <p>{{ post.text }}</p><a href="/delete/{{post.id}}">Delete</a>
+        <a href="/edit/{{post.id}}">Edit</a></div>
+
+        <hr />
+    {% endfor %}
+</div>
+
+ </body>
+</html>

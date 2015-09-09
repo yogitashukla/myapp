@@ -1,0 +1,23 @@
+
+
+
+<form method="post" >
+
+    {% csrf_token %}
+    <label>Author: </label>
+    <input name="author" value="{{post.author}}">
+    <br>
+    <label>Title:</label>
+    <input name="title" value="{{post.title}}">
+    <br>
+    <label>Text: </label>
+    <input name="text" value="{{post.text}}">
+    <br>
+    <label>Pub_date: </label>
+    <input name="pub_date" value="{{post.pub_date}}">
+    <br>
+    <input type="hidden" name="id" value="{{person.id}}">
+
+    <input type="submit" value="Submit" >
+    <a href="/up">back</a>
+</form>

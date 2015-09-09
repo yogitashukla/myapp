@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Welcome to Django{% endblock %}
+{% block head %}Welcome to Django{% endblock %}
+
+{% block content %}
+    <p>Welcome {{ user.username }} !!!</p>
+<body>
+    <div id="sidebar"> {% block sidebar %} {% endblock %} </div>
+    <div id="container">
+        <div id="menu">
+            {% block nav-global %}
+
+                <!-- MENU -->
+                <h3>MyBlog</h3> 
+                  <form method="post" action="post">
+                 <center> <input type="submit" value='Add'>
+                   </form>
+                  <a href="/admin">Admin </a>
+
+                  <a href="/post">Add Post </a>
+                {% if user.is_staff %}
+             
+                <a href= "{% url 'admin:index' %}" >Admin</a>
+                <a href="{% url 'admin:blog_post_add' %}">Add post</a>
+                {% endif %}
+
+            {% endblock %}
+        </div>
+
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+
+    </div>
+
+
+    <a href="/logout/">Logout</a>
+
+{% endblock %}
